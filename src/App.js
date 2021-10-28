@@ -1,15 +1,9 @@
 import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import UserBar from './components/UserBar';
+import SiteUi from './components/SiteUi';
 
 const App = () => {
-  return (
-    <>
-      <NavBar />
-      <UserBar />
-    </>
-  );
+  return <SiteUi />;
 };
 
 export default App;
