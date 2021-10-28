@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import MyAppBar from './components/MyAppBar';
+import NavBar from './components/NavBar';
 import UserBar from './components/UserBar';
 
 const App = () => {
   return (
     <>
-      <MyAppBar />
+      <NavBar />
       <UserBar />
     </>
   );
