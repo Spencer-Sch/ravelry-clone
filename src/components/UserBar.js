@@ -1,18 +1,15 @@
-import {
-  AppBar,
-  Container,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
+import { Container, Grid, IconButton, Typography } from '@material-ui/core';
 import AppsIcon from '@material-ui/icons/Apps';
 
 const MyAppBar = () => {
   return (
     <Container maxWidth="false">
-      <IconButton edge="start" color="inherit" aria-label="projects">
-        <AppsIcon />
-      </IconButton>
+      <Grid container justifyContent="center">
+        <IconButton edge="start" color="inherit" aria-label="projects">
+          <AppsIcon />
+          <Typography>Projects</Typography>
+        </IconButton>
+      </Grid>
     </Container>
   );
 };
