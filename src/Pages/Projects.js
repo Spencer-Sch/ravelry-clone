@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Project from '../components/Project';
+import NewProjectModal from '../components/NewProjectModal';
 
 const useStyles = makeStyles({
   gridContainer: {
@@ -20,9 +21,19 @@ const useStyles = makeStyles({
 
 const Projects = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
+      <NewProjectModal open={open} onClose={handleClose} />
       <Grid container xs={12} className={classes.gridContainer}>
         <Grid item xs={12} className={classes.gridH2}>
           <Typography variant="h2" className={classes.h2}>
@@ -34,6 +45,7 @@ const Projects = () => {
             variant="contained"
             color="secondary"
             startIcon={<AddCircleOutlineIcon />}
+            onClick={handleOpen}
           >
             new project
           </Button>
