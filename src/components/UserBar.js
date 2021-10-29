@@ -38,12 +38,7 @@ const MyAppBar = () => {
           activeClassName={classes.active}
           to="/home"
         >
-          <IconButton
-            edge="start"
-            color="inherit"
-            disableRipple={true}
-            aria-label="home"
-          >
+          <IconButton color="inherit" disableRipple={true} aria-label="home">
             <HomeIcon />
             <Typography className={classes.link} variant="p">
               Home
@@ -56,7 +51,6 @@ const MyAppBar = () => {
           to="/projects"
         >
           <IconButton
-            edge="end"
             color="inherit"
             disableRipple={true}
             aria-label="projects"
