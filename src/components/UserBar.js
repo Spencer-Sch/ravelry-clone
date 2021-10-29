@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import AppsIcon from '@material-ui/icons/Apps';
+import HomeIcon from '@material-ui/icons/Home';
 import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -16,14 +17,12 @@ const useStyles = makeStyles({
   link: {
     color: 'black',
     textDecoration: 'none',
-    // fontWeight: 'bold',
     fontSize: '1.2rem',
   },
   active: {
     color: 'black',
     textDecoration: 'none',
     borderBottom: 'solid black 2px',
-    // fontWeight: 'bold',
     fontSize: '1.2rem',
   },
 });
@@ -37,9 +36,31 @@ const MyAppBar = () => {
         <NavLink
           className={classes.link}
           activeClassName={classes.active}
+          to="/home"
+        >
+          <IconButton
+            edge="start"
+            color="inherit"
+            disableRipple={true}
+            aria-label="home"
+          >
+            <HomeIcon />
+            <Typography className={classes.link} variant="p">
+              Home
+            </Typography>
+          </IconButton>
+        </NavLink>
+        <NavLink
+          className={classes.link}
+          activeClassName={classes.active}
           to="/projects"
         >
-          <IconButton edge="start" color="inherit" aria-label="projects">
+          <IconButton
+            edge="end"
+            color="inherit"
+            disableRipple={true}
+            aria-label="projects"
+          >
             <AppsIcon />
             <Typography className={classes.link} variant="p">
               Projects
