@@ -8,7 +8,9 @@ import Projects from './Pages/Projects';
 const App = () => {
   return (
     <>
-      <SiteUi />
+      <header>
+        <SiteUi />
+      </header>
       <main>
         <Route path="/home">
           <Home />
