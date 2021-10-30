@@ -31,16 +31,17 @@ const NavBar = () => {
   return (
     <AppBar color="primary" position="static">
       <Toolbar className={classes.toolbar}>
-        <Grid container xs={11}>
+        <Grid container item xs={11}>
           <Typography variant="h1" className={classes.h1}>
             Skein Queen
           </Typography>
         </Grid>
         <Grid
           container
+          item
           xs={1}
           justifyContent="space-evenly"
-          clasName={classes.buttonGrid}
+          className={classes.buttonGrid}
         >
           <IconButton edge="end" color="inherit" aria-label="menu">
             <MenuIcon fontSize="large" />

@@ -12,6 +12,7 @@ import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles({
   container: {
+    minWidth: '100%',
     background: grey[300],
   },
   link: {
@@ -31,7 +32,7 @@ const MyAppBar = () => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="false" className={classes.container}>
+    <Container className={classes.container}>
       <Grid container justifyContent="center">
         <NavLink
           className={classes.link}
@@ -40,9 +41,7 @@ const MyAppBar = () => {
         >
           <IconButton color="inherit" disableRipple={true} aria-label="home">
             <HomeIcon />
-            <Typography className={classes.link} variant="p">
-              Home
-            </Typography>
+            <Typography className={classes.link}>Home</Typography>
           </IconButton>
         </NavLink>
         <NavLink
@@ -56,9 +55,7 @@ const MyAppBar = () => {
             aria-label="projects"
           >
             <AppsIcon />
-            <Typography className={classes.link} variant="p">
-              Projects
-            </Typography>
+            <Typography className={classes.link}>Projects</Typography>
           </IconButton>
         </NavLink>
       </Grid>

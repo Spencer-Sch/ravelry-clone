@@ -34,7 +34,7 @@ const Projects = () => {
   return (
     <>
       <NewProjectModal open={open} onClose={handleClose} />
-      <Grid container xs={12} className={classes.gridContainer}>
+      <Grid container className={classes.gridContainer}>
         <Grid item xs={12} className={classes.gridH2}>
           <Typography variant="h2" className={classes.h2}>
             My Projects
@@ -50,7 +50,7 @@ const Projects = () => {
             new project
           </Button>
         </Grid>
-        <Grid container xs={10} spacing={4}>
+        <Grid container item xs={10} spacing={4}>
           <Project />
           <Project />
           <Project />
