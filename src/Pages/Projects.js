@@ -53,7 +53,12 @@ const Projects = () => {
         </Grid>
         <Grid container item xs={10} spacing={4}>
           {DUMMY_DATA.map((project) => (
-            <ProjectCard {...project} />
+            <ProjectCard
+              name={project.name}
+              currentDate={project.details.currentDate}
+              imageUrl={project.images[0].url}
+              imageCaption={project.images[0].caption}
+            />
           ))}
         </Grid>
       </Grid>
