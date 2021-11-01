@@ -34,8 +34,8 @@ export const DUMMY_DATA = [
       currentDate: '06/10/21',
       finishBy: '09/20/22',
       sizeMade: '6x1',
-      toolsData: [{ tool1: '6mm hook' }, { tool2: '3mm hook' }],
-      materialsData: [{ material1: 'pink yarn' }, { material2: 'blue yarn' }],
+      toolsData: [{ tool: '6mm hook' }, { tool: '3mm hook' }],
+      materialsData: [{ material: 'pink yarn' }, { material: 'blue yarn' }],
       patternData: {
         patternName: 'BEST SCARF EVAR!!!!',
         patternLink:
@@ -66,8 +66,8 @@ export const DUMMY_DATA = [
       currentDate: '02/05/20',
       finishBy: '05/15/22',
       sizeMade: '8x6',
-      toolsData: [{ tool1: '6mm wooden needles' }],
-      materialsData: [{ material1: 'black yarn' }, { material2: 'green yarn' }],
+      toolsData: [{ tool: '6mm wooden needles' }],
+      materialsData: [{ material: 'black yarn' }, { material: 'green yarn' }],
       patternData: {
         patternName: 'A cool blanket',
         patternLink:
