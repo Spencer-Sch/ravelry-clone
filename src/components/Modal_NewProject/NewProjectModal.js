@@ -6,6 +6,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { Grid, Paper, Slide } from '@material-ui/core';
 
 import StepOneContent from './StepOneContent';
+import StepTwoContent from './StepTwoContent';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -40,7 +41,10 @@ const NewProjectModal = (props) => {
         <Slide direction="up" in={props.open}>
           <Paper variant="elevation" elevation={5} className={classes.paper}>
             <Grid container justifyContent="center">
-              <StepOneContent />
+              {pageNum === 1 && <StepOneContent onNext={handleNextPage} />}
+              {pageNum === 2 && (
+                <StepTwoContent onSaveChanges={handleModalClose} />
+              )}
             </Grid>
           </Paper>
         </Slide>
