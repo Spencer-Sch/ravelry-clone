@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import SiteUi from './components/Navigation/SiteUi';
 import Home from './Pages/Home';
+import ProjectDetails from './Pages/ProjectDetails';
 import Projects from './Pages/Projects';
 
 const App = () => {
@@ -12,12 +13,17 @@ const App = () => {
         <SiteUi />
       </header>
       <main>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/projects">
-          <Projects />
-        </Route>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/projects" exact>
+            <Projects />
+          </Route>
+          <Route path="/projects/:projectName">
+            <ProjectDetails />
+          </Route>
+        </Switch>
       </main>
     </>
   );
