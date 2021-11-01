@@ -21,17 +21,21 @@ const useStyles = makeStyles({
   },
 });
 
-const Project = () => {
+const Project = (props) => {
+  console.log('this is the props coming in!', props);
   const classes = useStyles();
   return (
     <Grid item xs={3}>
       <Card elevation={5}>
         <CardActionArea>
-          <CardHeader title="Test 1" subheader="Sep 5, 2020" />
+          <CardHeader
+            title={props.name}
+            subheader={props.details.currentDate}
+          />
           <CardMedia
             className={classes.cardMedia}
-            image="https://images.pexels.com/photos/2070676/pexels-photo-2070676.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-            title="placeholder"
+            image={props.images[0].url}
+            title={props.images[0].caption}
           />
         </CardActionArea>
         <CardActions className={classes.cardActions} disableSpacing>
