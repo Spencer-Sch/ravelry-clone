@@ -15,9 +15,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   paper: {
+    width: '40rem',
     backgroundColor: theme.palette.background.paper,
     border: `2px solid ${theme.palette.primary.main}`,
     padding: theme.spacing(2, 4, 3),
+    overflow: 'auto',
+    maxHeight: '90vh',
   },
 }));
 

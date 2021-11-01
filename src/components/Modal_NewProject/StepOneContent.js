@@ -41,8 +41,8 @@ const crafts = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  h2: {
-    fontSize: '3rem',
+  h3: {
+    fontSize: '2rem',
   },
   root: {
     width: '100%',
@@ -97,8 +97,8 @@ const StepOneContent = (props) => {
         className={classes.typographyGrid}
       >
         <Typography
-          variant="h2"
-          className={classes.h2}
+          variant="h3"
+          className={classes.h3}
           id="transition-modal-title"
         >
           Add New Project
@@ -107,7 +107,7 @@ const StepOneContent = (props) => {
           Fill out the form to add a new project
         </Typography>
       </Grid>
-      <Grid container item xs={6} alignItems="center" direction="column">
+      <Grid container item xs={8} alignItems="center" direction="column">
         <form className={classes.root} noValidate autoComplete="off">
           <Grid container item xs={12} className={classes.selectGrid}>
             <TextField
