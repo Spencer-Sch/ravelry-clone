@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import { Button, Grid, makeStyles, Typography } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import Project from '../components/Project';
-import NewProjectModal from '../components/NewProjectModal';
+import Project from '../components/Project/Project';
+import NewProjectModal from '../components/Modal_NewProject/NewProjectModal';
 
 const useStyles = makeStyles({
   gridContainer: {

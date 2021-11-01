@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import SiteUi from './components/SiteUi';
+import SiteUi from './components/Navigation/SiteUi';
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 
