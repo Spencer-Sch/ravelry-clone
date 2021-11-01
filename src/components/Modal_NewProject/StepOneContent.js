@@ -176,7 +176,11 @@ const StepOneContent = (props) => {
             </FormControl>
           </Grid>
           <Grid container item xs={12} justifyContent="flex-end">
-            <Button color="secondary" variant="contained">
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={props.onNext}
+            >
               next
             </Button>
           </Grid>

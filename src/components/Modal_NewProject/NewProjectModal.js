@@ -24,6 +24,19 @@ const useStyles = makeStyles((theme) => ({
 const NewProjectModal = (props) => {
   const classes = useStyles();
 
+  const [pageNum, setPageNum] = useState(1);
+
+  const handleNextPage = () => {
+    setPageNum(2);
+  };
+
+  const handleModalClose = () => {
+    props.onClose();
+    setTimeout(() => {
+      setPageNum(1);
+    }, 100);
+  };
+
   return (
     <>
       <Modal
@@ -31,7 +44,7 @@ const NewProjectModal = (props) => {
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open={props.open}
-        onClose={props.onClose}
+        onClose={handleModalClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
