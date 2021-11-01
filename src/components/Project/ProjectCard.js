@@ -11,6 +11,7 @@ import {
   makeStyles,
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   cardMedia: {
@@ -21,22 +22,20 @@ const useStyles = makeStyles({
   },
 });
 
-const Project = (props) => {
-  console.log('this is the props coming in!', props);
+const ProjectCard = (props) => {
   const classes = useStyles();
   return (
     <Grid item xs={3}>
       <Card elevation={5}>
         <CardActionArea>
-          <CardHeader
-            title={props.name}
-            subheader={props.details.currentDate}
-          />
-          <CardMedia
-            className={classes.cardMedia}
-            image={props.images[0].url}
-            title={props.images[0].caption}
-          />
+          <Link to={`/projects/${props.name}`}>
+            <CardHeader title={props.name} subheader={props.currentDate} />
+            <CardMedia
+              className={classes.cardMedia}
+              image={props.imageUrl}
+              title={props.imageCaption}
+            />
+          </Link>
         </CardActionArea>
         <CardActions className={classes.cardActions} disableSpacing>
           <IconButton aria-label="more options">
@@ -48,4 +47,4 @@ const Project = (props) => {
   );
 };
 
-export default Project;
+export default ProjectCard;
