@@ -13,7 +13,19 @@ import {
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
+  card: {
+    // transition: 'boxShadow 0.05s linear, transform 0.05s linear',
+    // '&:hover': {
+    //   transform: 'translateY(-7px)',
+    //   boxShadow: theme.shadows[14],
+    // },
+    transition: 'boxShadow 0.05s linear, transform 0.05s linear',
+    '&:hover': {
+      boxShadow: theme.shadows[15],
+      transform: 'scale(1.004)',
+    },
+  },
   link: {
     color: 'black',
     textDecoration: 'none',
@@ -24,13 +36,13 @@ const useStyles = makeStyles({
   cardActions: {
     justifyContent: 'flex-end',
   },
-});
+}));
 
 const ProjectCard = (props) => {
   const classes = useStyles();
   return (
     <Grid item xs={3}>
-      <Card elevation={5}>
+      <Card elevation={5} className={classes.card}>
         <CardActionArea>
           <Link to={`/projects/${props.name}`} className={classes.link}>
             <CardHeader title={props.name} subheader={props.currentDate} />
