@@ -11,7 +11,9 @@ import {
 
 import { DUMMY_DATA } from '../../constants/dummy_data';
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  table: {},
+}));
 
 const DetailsTable = (props) => {
   const classes = useStyles();
@@ -107,7 +109,11 @@ const DetailsTable = (props) => {
               Notes
             </TableCell>
             <TableCell>
-              {project.details.projectNotes.map((note) => note.note)}
+              {project.details.projectNotes.map((note) => (
+                <TableRow>
+                  <TableCell>{note.note}</TableCell>
+                </TableRow>
+              ))}
             </TableCell>
           </TableRow>
         </TableBody>
