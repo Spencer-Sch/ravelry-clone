@@ -61,6 +61,12 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginBottom: '0.5rem',
   },
+  deleteButton: {
+    '&:hover': {
+      color: 'white',
+      backgroundColor: theme.palette.secondary.main,
+    },
+  },
 }));
 
 const ProjectDetails = () => {
@@ -312,7 +318,7 @@ const ProjectDetails = () => {
             fullWidth
             variant="text"
             color="secondary"
-            className={classes.button}
+            className={`${classes.button} ${classes.deleteButton}`}
             startIcon={<DeleteIcon />}
             // onClick={handleOpen}
           >
