@@ -12,7 +12,9 @@ import {
 import { DUMMY_DATA } from '../../constants/dummy_data';
 
 const useStyles = makeStyles((theme) => ({
-  table: {},
+  noteCell: {
+    paddingLeft: 0,
+  },
 }));
 
 const DetailsTable = (props) => {
@@ -21,13 +23,15 @@ const DetailsTable = (props) => {
   const project = DUMMY_DATA.find((project) => project.name === props.params);
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="details table">
+    <TableContainer
+      elevation={3}
+      component={Paper}
+      className={classes.tableContainer}
+    >
+      <Table aria-label="details table">
         <TableBody>
           <TableRow>
-            <TableCell component="th" scope="row">
-              Name
-            </TableCell>
+            <TableCell component="th">Name</TableCell>
             <TableCell>{project.name}</TableCell>
           </TableRow>
           <TableRow>
@@ -94,7 +98,7 @@ const DetailsTable = (props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                {project.details.patternData.patternLink}
+                go to pattern
               </a>
             </TableCell>
           </TableRow>
@@ -111,7 +115,9 @@ const DetailsTable = (props) => {
             <TableCell>
               {project.details.projectNotes.map((note) => (
                 <TableRow>
-                  <TableCell>{note.note}</TableCell>
+                  <TableCell className={classes.noteCell}>
+                    {note.note}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableCell>
