@@ -6,6 +6,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import InsertPhotoIcon from '@material-ui/icons/InsertPhoto';
 import { DUMMY_DATA } from '../constants/dummy_data';
+import DetailsTable from '../components/DetailsTable/DetailsTable';
 
 const useStyles = makeStyles((theme) => ({
   containerGrid: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '3rem',
   },
   h2: {
+    width: '100%',
     fontSize: '1.5rem',
     fontWeight: 'bold',
     borderBottom: 'solid black 1px',
@@ -44,16 +46,6 @@ const useStyles = makeStyles((theme) => ({
   imageIcon: {
     fontSize: '3rem',
   },
-  detailsItemGrid: {
-    borderBottom: 'solid 1px #ddd',
-    marginBottom: '1rem',
-  },
-  detailsItemLabel: {
-    fontWeight: 'bold',
-    marginRight: '1rem',
-    textTransform: 'uppercase',
-  },
-  detailsItem: {},
   actionsGrid: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(2),
@@ -78,13 +70,14 @@ const ProjectDetails = () => {
   );
 
   return (
-    <Grid
-      container
-      xs={12}
-      justifyContent="center"
-      className={classes.containerGrid}
-    >
-      <Grid item xs={12} justifyContent="center" className={classes.h2Grid}>
+    <Grid container justifyContent="center" className={classes.containerGrid}>
+      <Grid
+        item
+        container
+        xs={12}
+        justifyContent="center"
+        className={classes.h2Grid}
+      >
         <Typography variant="h2" className={classes.h2}>
           {project.name}
         </Typography>
@@ -127,173 +120,9 @@ const ProjectDetails = () => {
               Details
             </Typography>
           </Grid>
-          {/* //////////////////////////////////////////////// */}
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Type
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItem}>
-              {project.details.type}
-            </Typography>
-          </Grid>
-          {/* //////////////////////////////////////////////// */}
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Made for
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItem}>
-              {project.details.madeFor}
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Started date
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItem}>
-              {project.details.currentDate}
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Goal finish date
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItem}>
-              {project.details.finishBy}
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Size made
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItem}>
-              {project.details.sizeMade}
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Tools used
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            {project.details.toolsData.map((tool) => (
-              <Typography variant="body1" className={classes.detailsItem}>
-                {tool.tool}
-              </Typography>
-            ))}
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            <Typography variant="body1" className={classes.detailsItemLabel}>
-              Materials used
-            </Typography>
-          </Grid>
-          <Grid
-            container
-            item
-            xs={6}
-            // justifyContent="center"
-            className={classes.detailsItemGrid}
-          >
-            {project.details.materialsData.map((material) => (
-              <Typography variant="body1" className={classes.detailsItem}>
-                {material.material}
-              </Typography>
-            ))}
-          </Grid>
+          <DetailsTable params={params.projectName} />
         </Grid>
-        <Grid
-          xs={2}
-          item
-          justifyContent="center"
-          className={classes.actionsGrid}
-        >
+        <Grid xs={2} item className={classes.actionsGrid}>
           <Button
             fullWidth
             variant="outlined"
