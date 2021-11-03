@@ -4,21 +4,31 @@
 //     id: '',
 //     name: '',
 //     details: {
-//         type: '',
-//         madeFor: '',
-//         finishBy: '',
-//         sizeMade: '',
-//         toolsData: {},
-//         materialsData: {},
-//         patternData: {
-//             patternName: '',
-//             patternLink: '',
-//             patternAuthor: '',
+//       type: '',
+//       madeFor: '',
+//       currentDate: '',
+//       finishBy: '',
+//       sizeMade: '',
+//       toolsData: [{ tool: '' }, { tool: '' }],
+//       materialsData: [{ material: '' }, { material: '' }],
+//       patternData: {
+//         patternName: '',
+//         patternLink: '',
+//         patternAuthor: '',
+//       },
+//       projectNotes: [
+//         {
+//           note: '',
 //         },
-//         projectNotes: {},
+//       ],
 //     },
-//     images: {},
-// }
+//     images: [
+//       {
+//         url: '',
+//         caption: '',
+//       },
+//     ],
+//   },
 
 // STOCK IMG URL
 // https://images.pexels.com/photos/2070676/pexels-photo-2070676.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260
@@ -44,8 +54,7 @@ export const DUMMY_DATA = [
       },
       projectNotes: [
         {
-          note1:
-            'Be sure not to pull too tight. My first few rows were WAY to snug.',
+          note: 'Be sure not to pull too tight. My first few rows were WAY to snug.',
         },
       ],
     },
@@ -76,12 +85,10 @@ export const DUMMY_DATA = [
       },
       projectNotes: [
         {
-          note1:
-            'Starting yarn was too scratchy. Need to buy new and sart over.',
+          note: 'Starting yarn was too scratchy. Need to buy new and sart over.',
         },
         {
-          note2:
-            "This type of weeve is too loose, I don't like the look of it. I won't be doing this type of weeve again.",
+          note: "This type of weeve is too loose, I don't like the look of it. I won't be doing this type of weeve again.",
         },
       ],
     },
