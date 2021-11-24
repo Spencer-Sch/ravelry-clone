@@ -7,6 +7,7 @@ import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import InsertPhotoIcon from '@material-ui/icons/InsertPhoto';
 import { DUMMY_DATA } from '../constants/dummy_data';
 import DetailsTable from '../components/DetailsTable/DetailsTable';
+import MaterialsTable from '../components/DetailsTable/MaterialsTable';
 
 const useStyles = makeStyles((theme) => ({
   containerGrid: {
@@ -22,12 +23,12 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: 'solid black 1px',
   },
   contentgrid: {},
-  detailsGrid: {},
+  centerColGrid: {},
   detailsTitleGrid: {
     marginBottom: theme.spacing(3),
   },
   h3: {},
-  imageContainerGrid: {
+  leftColGrid: {
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(3),
   },
@@ -46,18 +47,28 @@ const useStyles = makeStyles((theme) => ({
   imageIcon: {
     fontSize: '3rem',
   },
-  actionsGrid: {
+  rightColGrid: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(2),
+    // backgroundColor: 'red',
+  },
+  buttonGrid: {
+    // backgroundColor: '#999',
+    // marginBottom: theme.spacing(5),
   },
   button: {
     marginBottom: '0.5rem',
+    // margin: '0 auto',
+    // width: '40%',
   },
   deleteButton: {
     '&:hover': {
       color: 'white',
       backgroundColor: theme.palette.secondary.main,
     },
+  },
+  materialsGrid: {
+    // margin: '0 auto',
   },
 }));
 
@@ -85,29 +96,31 @@ const ProjectDetails = () => {
       <Grid
         container
         item
-        xs={8}
+        xs={12}
+        // xs={9}
+        // xs={8}
         justifyContent="center"
         className={classes.contentgrid}
       >
         <Grid
-          xs={2}
+          xs={4}
           container
           item
           justifyContent="center"
-          className={classes.imageContainerGrid}
+          className={classes.leftColGrid}
         >
-          <Grid className={classes.imageGrid}>
+          <Grid xs={4} className={classes.imageGrid}>
             <Paper className={classes.imagePaper}>
               <InsertPhotoIcon className={classes.imageIcon} />
             </Paper>
           </Grid>
         </Grid>
         <Grid
-          xs={6}
-          container
+          xs={4}
+          // container
           item
           justifyContent="center"
-          className={classes.detailsGrid}
+          className={classes.centerColGrid}
         >
           <Grid
             container
@@ -120,39 +133,59 @@ const ProjectDetails = () => {
               Details
             </Typography>
           </Grid>
-          <DetailsTable params={params.projectName} />
+          <Grid xs={12}>
+            <DetailsTable params={params.projectName} />
+          </Grid>
         </Grid>
-        <Grid xs={2} item className={classes.actionsGrid}>
-          <Button
-            fullWidth
-            variant="outlined"
-            color="secondary"
-            className={classes.button}
-            startIcon={<EditIcon />}
-            // onClick={handleOpen}
+        <Grid
+          xs={4}
+          // item
+          container
+          // alignItems="flex-start"
+          justifyContent="center"
+          className={classes.rightColGrid}
+        >
+          <Grid
+            xs={8}
+            // item
+            container
+            direction="column"
+            className={classes.buttonGrid}
           >
-            Edit
-          </Button>
-          <Button
-            fullWidth
-            variant="outlined"
-            color="secondary"
-            className={classes.button}
-            startIcon={<AddToPhotosIcon />}
-            // onClick={handleOpen}
-          >
-            Add Photos
-          </Button>
-          <Button
-            fullWidth
-            variant="text"
-            color="secondary"
-            className={`${classes.button} ${classes.deleteButton}`}
-            startIcon={<DeleteIcon />}
-            // onClick={handleOpen}
-          >
-            Delete
-          </Button>
+            <Button
+              // fullWidth
+              variant="outlined"
+              color="secondary"
+              className={classes.button}
+              startIcon={<EditIcon />}
+              // onClick={handleOpen}
+            >
+              Edit
+            </Button>
+            <Button
+              // fullWidth
+              variant="outlined"
+              color="secondary"
+              className={classes.button}
+              startIcon={<AddToPhotosIcon />}
+              // onClick={handleOpen}
+            >
+              Add Photos
+            </Button>
+            <Button
+              // fullWidth
+              variant="text"
+              color="secondary"
+              className={`${classes.button} ${classes.deleteButton}`}
+              startIcon={<DeleteIcon />}
+              // onClick={handleOpen}
+            >
+              Delete
+            </Button>
+          </Grid>
+          <Grid xs={8} className="materialsGrid">
+            <MaterialsTable params={params.projectName} />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
